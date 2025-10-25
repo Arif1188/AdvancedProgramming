@@ -28,3 +28,13 @@ class Adapter:
         return {"model": self.response_dto.model, "version": self.response_dto.version}
 
 
+
+if __name__ == "__main__":
+    # response = ResponseDTO("Iphone", "18ProMax", 20, 0.150)
+    # handler = ResponseHandler(response)
+    # print(handler.handle())
+
+    response = NewResponseDTO("Iphone", "18ProMax", 20, 0.150)
+    adapter = Adapter(response)
+    handler = ResponseHandler(adapter)
+    print(handler.handle())
