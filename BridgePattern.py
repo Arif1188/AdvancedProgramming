@@ -21,3 +21,21 @@ class FileReader(IReader):
 class HTMLReader(IReader):
     def read(self):
         print("Reading from HTML")
+      
+  
+class TelegramSender(ISender):
+    def __init__(self, reader: IReader):
+        self.reader = reader
+
+    def send(self):
+        self.reader.read()
+        print("Sent to Telegram")
+
+
+class EmailSender(ISender):
+    def __init__(self, reader: IReader):
+        self.reader = reader
+
+    def send(self):
+        self.reader.read()
+        print("Sent to Email")
