@@ -65,3 +65,28 @@ class Memory:
             self.__exchange.restore(self.__history.pop())
 
 
+if __name__ == '__main__':
+    exchange = Exchange(10, 10)
+    memory = Memory(exchange)
+    exchange.get_dollars()
+    exchange.get_euro()
+    print('Sell dollar, buy euro')
+    exchange.sell()
+    exchange.buy()
+
+    exchange.get_dollars()
+    exchange.get_euro()
+
+    print('compare sustaince')
+
+    memory.backup()
+
+    exchange.sell()
+    exchange.buy()
+    exchange.get_dollars()
+    exchange.get_euro()
+
+    print('состяние из памяти ')
+    memory.undo()
+    exchange.get_dollars()
+    exchange.get_euro()
